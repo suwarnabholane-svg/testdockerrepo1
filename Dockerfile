@@ -1,12 +1,12 @@
-FROM python:3.14-slim 
-
+#pull base image
+FROM python:3.14-slim
+#install streamlit
 RUN pip install streamlit
-
+#set workign directory
 WORKDIR /var
-
-COPY app.py
-
+#copy file
+COPY app.py .
+#expose streamlit
 EXPOSE 8501
-
-CMD [ "streamlit","run","app.py" ]
-
+# run streamlit app
+CMD ["streamlit", "run", "app.py"]
